@@ -30,7 +30,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $items = User::all();
+        $items = User::with('group')->get();
         return view('admin.user.index', compact('items'));
     }
 
