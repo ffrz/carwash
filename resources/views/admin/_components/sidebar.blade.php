@@ -31,6 +31,15 @@ if (!isset($menu_active)) {
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
+              <a href="{{ url('/admin/reports/sales-by-category') }}"
+                class="nav-link {{ $nav_active == 'sales-by-category' ? 'active' : '' }}">
+                <i class="nav-icon fas fa-file-contract"></i>
+                <p><small>Lap. Penjualan</small></p>
+              </a>
+            </li>
+            {{--
+          
+            <li class="nav-item">
               <a href="{{ url('/admin/reports/income-statement') }}"
                 class="nav-link {{ $nav_active == 'income-statement-report' ? 'active' : '' }}">
                 <i class="nav-icon fas fa-file-contract"></i>
@@ -58,8 +67,10 @@ if (!isset($menu_active)) {
                 <p><small>Lap. Biaya Operasional</small></p>
               </a>
             </li>
+            --}}
           </ul>
         </li>
+        
         <li class="nav-item {{ $menu_active == 'sales' ? 'menu-open' : '' }}">
           <a href="#" class="nav-link {{ $menu_active == 'sales' ? 'active' : '' }}">
             <i class="nav-icon fas fa-cart-shopping"></i>
@@ -92,6 +103,7 @@ if (!isset($menu_active)) {
             </li>
           </ul>
         </li>
+        {{-- 
         <li class="nav-item {{ $menu_active == 'inventory' ? 'menu-open' : '' }}">
           <a href="#" class="nav-link {{ $menu_active == 'inventory' ? 'active' : '' }}">
             <i class="nav-icon fas fa-warehouse"></i>
@@ -155,6 +167,7 @@ if (!isset($menu_active)) {
             </li>
           </ul>
         </li>
+        
         <li class="nav-item {{ $menu_active == 'cost' ? 'menu-open' : '' }}">
           <a href="#" class="nav-link {{ $menu_active == 'cost' ? 'active' : '' }}">
             <i class="nav-icon fas fa-receipt"></i>
@@ -179,6 +192,7 @@ if (!isset($menu_active)) {
             </li>
           </ul>
         </li>
+        
         <li class="nav-item {{ $menu_active == 'finance' ? 'menu-open' : '' }}">
           <a href="#" class="nav-link {{ $menu_active == 'finance' ? 'active' : '' }}">
             <i class="nav-icon fas fa-wallet"></i>
@@ -211,6 +225,7 @@ if (!isset($menu_active)) {
             </li>
           </ul>
         </li>
+        --}}
         <li class="nav-item {{ $menu_active == 'system' ? 'menu-open' : '' }}">
           <a href="#" class="nav-link {{ $menu_active == 'system' ? 'active' : '' }}">
             <i class="nav-icon fas fa-gears"></i>
@@ -234,8 +249,7 @@ if (!isset($menu_active)) {
               </a>
             </li>
             <li class="nav-item">
-              <a href="{{ url('/admin/settings') }}"
-                class="nav-link {{ $nav_active == 'settings' ? 'active' : '' }}">
+              <a href="{{ url('/admin/settings') }}" class="nav-link {{ $nav_active == 'settings' ? 'active' : '' }}">
                 <i class="nav-icon fas fa-gear"></i>
                 <p>Pengaturan</p>
               </a>
