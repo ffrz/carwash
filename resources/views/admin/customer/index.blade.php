@@ -41,7 +41,7 @@
                     <a href="<?= url("/admin/customers/edit/$item->id") ?>" class="btn btn-default btn-sm">
                       <i class="fa fa-edit"></i>
                     </a>
-                    <a onclick="return confirm('Hapus pemasok?')" href="<?= url("/admin/customers/delete/$item->id") ?>" class="btn btn-danger btn-sm">
+                    <a onclick="return confirm('Hapus pelanggan?')" href="<?= url("/admin/customers/delete/$item->id") ?>" class="btn btn-danger btn-sm">
                       <i class="fa fa-trash"></i>
                     </a>
                   </div>
