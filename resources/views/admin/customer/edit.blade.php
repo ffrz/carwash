@@ -16,7 +16,7 @@ $title = ($item->id ? 'Edit' : 'Tambah') . ' Pelanggan';
       @include('admin._components.card-header', ['title' => $title])
       <div class="card-body">
         <div class="form-row">
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-6">
             <label for="name">Nama</label>
             <input type="text" class="form-control @error('name') is-invalide @enderror" id="name" placeholder="Nama"
               name="name" value="{{ old('name', $item->name) }}">
@@ -24,16 +24,16 @@ $title = ($item->id ? 'Edit' : 'Tambah') . ' Pelanggan';
               <span class="text-danger">{{ $message }}</span>
             @enderror
           </div>
-          <div class="form-group col-md-4">
+          <div class="form-group col-md-6">
             <label for="contact">Kontak</label>
             <input type="text" class="form-control" id="contact" placeholder="Kontak" name="contact"
               value="{{ old('contact', $item->contact) }}">
           </div>
-          <div class="form-group col-md-4">
+          {{-- <div class="form-group col-md-4">
             <label for="url">URL</label>
             <input type="text" class="form-control" id="url" placeholder="URL" name="url"
               value="{{ old('url', $item->url) }}">
-          </div>
+          </div> --}}
         </div>
         <div class="form-row">
           <div class="form-group col-md-12">

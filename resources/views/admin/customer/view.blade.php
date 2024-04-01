@@ -38,12 +38,7 @@ $title = 'Rincian Pelanggan';
               <tr>
                 <td>Kontak</td>
                 <td>:</td>
-                <td><?= e($data->contacts) ?></td>
-              </tr>
-              <tr>
-                <td>URL</td>
-                <td>:</td>
-                <td><a target="_blank" href="<?= e($data->url) ?>"><?= e($data->url) ?></a></td>
+                <td><?= e($data->contact) ?></td>
               </tr>
               <tr>
                 <td>Alamat</td>

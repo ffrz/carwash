@@ -24,7 +24,6 @@
                 <th>Nama</th>
                 <th>Kontak</th>
                 <th>Alamat</th>
-                <th>URL</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -34,7 +33,6 @@
                 <td><?= e($item->name) ?></td>
                 <td><?= e($item->contact) ?></td>
                 <td><?= e($item->address) ?></td>
-                <td><?= e($item->url) ?></td>
                 <td class="text-center">
                   <div class="btn-group">
                     <a href="<?= url("/admin/customers/view/$item->id") ?>" class="btn btn-default btn-sm">
@@ -56,7 +54,6 @@
                 <th>Nama</th>
                 <th>Kontak</th>
                 <th>Alamat</th>
-                <th>URL</th>
                 <th>Aksi</th>
               </tr>
             </thead>
@@ -74,7 +71,7 @@
       ];
       DATATABLES_OPTIONS.columnDefs = [{
         orderable: false,
-        targets: 4
+        targets: 3
       }];
       $('.data-table').DataTable(DATATABLES_OPTIONS);
     });
