@@ -16,7 +16,7 @@ return \Illuminate\Foundation\Application::configure(basePath: dirname(__DIR__))
             \Illuminate\Foundation\Http\Middleware\PreventRequestsDuringMaintenance::class,
             \Illuminate\Http\Middleware\ValidatePostSize::class,
             \Illuminate\Foundation\Http\Middleware\TrimStrings::class,
-            \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+            //\Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         ]);
         $middleware->append([
             \App\Http\Middleware\Authenticate::class,
