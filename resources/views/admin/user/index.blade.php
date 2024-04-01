@@ -12,7 +12,7 @@
 
 @section('content')
   <div class="card card-light">
-    @include('admin._components.card-header', ['title' => 'Pengguna'])
+    @include('admin._components.card-header', ['title' => 'Pengguna', 'description' => 'Daftar pengguna sistem'])
     <div class="card-body">
       <div class="row">
         <div class="col-md-12">
@@ -38,7 +38,7 @@
                 </td>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->is_active ? 'Aktif' : 'Nonaktif' }}</td>
-                <td>{{ $item->group_name }}</td>
+                <td>{{ $item->group->name }}</td>
                 <td class="text-center">
                   <div class="btn-group">
                     <a href="{{ url("/admin/users/edit/$item->id") }}" class="btn btn-default btn-sm"><i

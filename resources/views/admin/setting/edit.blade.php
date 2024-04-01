@@ -6,7 +6,8 @@
 @section('content')
 <div class="card card-light">
     <form class="form-horizontal quick-form" method="POST" action="{{ url('admin/settings/save') }}">
-        @include('admin._components.card-header', ['title' => 'Pengaturan'])
+        @include('admin._components.card-header', ['title' => 'Pengaturan', 'description' =>
+            'Ini adalah halaman Pengaturan Sistem. Anda dapat memperbarui nama usaha dan alamat bisnis anda pada halaman ini.'])
         <div class="card-body">
             @csrf
             <div class="form-group row">
