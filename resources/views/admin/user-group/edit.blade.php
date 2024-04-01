@@ -1,4 +1,4 @@
-<?php $title = ($group->id ? 'Edit' : 'Tambah') . ' Pengguna' ?>
+<?php $title = ($group->id ? 'Edit' : 'Tambah') . ' Grup Pengguna'; ?>
 @extends('admin._layouts.default', [
     'title' => $title,
     'menu_active' => 'system',
@@ -42,6 +42,9 @@
         </style>
         <div class="form-row col-md-12">
           <h4>Hak Akses</h4>
+        </div>
+        <div class="form-row col-md-12">
+          <p class="mt-16">Maaf, saat ini fitur kustomisasi hak akses belum tersedia.</p>
         </div>
         <div class="container">
           <div class="row">
