@@ -10,21 +10,21 @@
         <div class="card-body">
             @csrf
             <div class="form-group row">
-                <label for="store_name" class="col-sm-2 col-form-label">Nama Toko</label>
+                <label for="business_name" class="col-sm-2 col-form-label">Nama Usaha</label>
                 <div class="col-sm-10">
-                    <input type="text" autofocus class="form-control @error('store_name') is-invalid @enderror"
-                        id="store_name" placeholder="Nama Toko" name="store_name" value="{{ $data['store_name'] }}">
+                    <input type="text" autofocus class="form-control @error('business_name') is-invalid @enderror"
+                        id="business_name" placeholder="Nama Usaha" name="business_name" value="{{ $data['business_name'] }}">
                 </div>
-                @error('store_name')
+                @error('business_name')
                     <span class="offset-sm-2 col-sm-10 error form-error">
                         {{ $message }}
                     </span>
                 @enderror
             </div>
             <div class="form-group row">
-                <label for="store_address   " class="col-sm-2 col-form-label">Alamat</label>
+                <label for="business_address   " class="col-sm-2 col-form-label">Alamat</label>
                 <div class="col-sm-10">
-                    <textarea class="form-control" id="store_address" name="store_address">{{ $data['store_address'] }}</textarea>
+                    <textarea class="form-control" id="business_address" name="business_address">{{ $data['business_address'] }}</textarea>
                 </div>
             </div>
         </div>

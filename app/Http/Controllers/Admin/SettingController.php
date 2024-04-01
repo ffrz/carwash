@@ -13,8 +13,8 @@ class SettingController extends Controller
     public function edit(Request $request)
     {
         $data = [
-            'store_name' => Setting::value('app.store_name', 'Toko Saya'),
-            'store_address' => Setting::value('app.store_address', '')
+            'business_name' => Setting::value('app.business_name', 'My Car Wash'),
+            'business_address' => Setting::value('app.business_address', '')
         ];
         return view('admin.setting.edit', compact('data'));
     }
@@ -22,17 +22,17 @@ class SettingController extends Controller
     public function save(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'store_name' => 'required'
+            'business_name' => 'required'
         ], [
-            'store_name.required' => 'Nama Toko harus diisi.'
+            'business_name.required' => 'Nama Usaha harus diisi.'
         ]);
 
         if ($validator->fails())
             return redirect()->back()->withInput()->withErrors($validator);
 
         DB::beginTransaction();
-        Setting::setValue('app.store_name', $request->post('store_name', ''));
-        Setting::setValue('app.store_address', $request->post('store_address', ''));
+        Setting::setValue('app.business_name', $request->post('business_name', ''));
+        Setting::setValue('app.business_address', $request->post('business_address', ''));
         DB::commit();
 
         return redirect('admin/settings')->with('info', 'Pengaturan telah disimpan.');
