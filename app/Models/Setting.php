@@ -11,7 +11,7 @@ class Setting extends Model
     protected $primaryKey = 'key';
     public $incrementing = false;
     protected $keyType = 'string';
-    
+
     /**
      * The attributes that are mass assignable.
      *
@@ -51,13 +51,14 @@ class Setting extends Model
 
     public static function setValue($key, $value)
     {
-        Setting::updateOrCreate(
-            ['key' => $key],
-            ['value' => $value],
-            ['lastmod_datetime' => now()],
-            ['lastmod_user_id' => Auth::user()->id],
+        Setting::updateOrCreate([
+            'key' => $key
+        ], [
+            'value' => $value,
+            'lastmod_datetime' => now(),
+            'lastmod_user_id' => Auth::user()->id
+        ]);
 
-        );
         static::$settings['key'] = $value;
     }
 }
