@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('name')->default('');
             $table->rememberToken();
             $table->timestamps();
-            //$table->foreign('group_id')->references('id')->on('user_groups');
+            $table->foreign('group_id')->references('id')->on('user_groups');
         });
     }
 
