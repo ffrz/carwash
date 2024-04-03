@@ -33,32 +33,26 @@ use Illuminate\Support\Facades\Route;
 
 /// Tambahkan route untuk akses publik disini
 Route::get('/', function () {
-    $user = Auth::user();
-    if (!$user) {
-        return redirect('/admin/login');
-    }
-
     // if ($user->role_id == 1) {
     //     return redirect(url('dashboard'));
     // } else if ($user->role_id == 2) {
     //     return redirect(url('profile'));
     // }
-    return redirect('/admin/dashboard');
+    return view('welcome');
 });
 
 Route::redirect('/admin', '/admin/dashboard');
 
-Route::get('admin/logout', [AuthController::class, 'logout']);
-
-/// Tambahkan route untuk akses admin disini
 Route::middleware([OnlyGuest::class])->group(function () {
     Route::get('admin/login', [AuthController::class, 'login'])->name('login');
     Route::post('admin/login', [AuthController::class, 'authenticate']);
 });
 
 Route::middleware([Authenticate::class, OnlyAdmin::class])->prefix('admin')->group(function () {
+    Route::get('logout', [AuthController::class, 'logout']);
+    /// Tambahkan route untuk akses admin disini
     Route::get('dashboard', [DashboardController::class, 'index']);
-    
+
     Route::controller(SettingController::class)->prefix('settings')->group(function () {
         Route::get('', 'edit');
         Route::post('save', 'save');
@@ -132,5 +126,4 @@ Route::middleware([Authenticate::class, OnlyAdmin::class])->prefix('admin')->gro
         Route::get('delete/{id}', 'delete');
         Route::get('view/{id}', 'view');
     });
-
 });

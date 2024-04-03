@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Symfony\Component\HttpFoundation\Response;
 
 class OnlyGuest
@@ -15,6 +16,18 @@ class OnlyGuest
      */
     public function handle(Request $request, Closure $next): Response
     {
+        $user = Auth::user();
+        
+        if ($user) {
+            if ($user->role_id == 1) {
+                return redirect('dashboard');
+            }
+
+            if ($user->role_id == 2) {
+                return redirect('books');
+            }
+        }
+
         return $next($request);
     }
 }

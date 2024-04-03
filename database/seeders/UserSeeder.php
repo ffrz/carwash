@@ -19,39 +19,19 @@ class UserSeeder extends Seeder
         Schema::enableForeignKeyConstraints();
 
         User::insert([
-            'username' => 'superadmin',
-            'password' => Hash::make('12345'),
-            'is_active' => true,
-            'is_admin' => true,
-            'group_id' => 1,
-        ]);
-        User::insert([
-            'username' => 'maintainer',
-            'password' => Hash::make('12345'),
-            'is_active' => true,
-            'is_admin' => false,
-            'group_id' => 2,
-        ]);
-        User::insert([
-            'username' => 'owner',
-            'password' => Hash::make('12345'),
-            'is_active' => false,
-            'is_admin' => true,
-            'group_id' => 11,
-        ]);
-        User::insert([
             'username' => 'admin',
             'password' => Hash::make('12345'),
             'is_active' => true,
-            'is_admin' => false,
-            'group_id' => 12,
+            'is_admin' => true,
+            'is_super_user' => true,
+            'group_id' => 11,
         ]);
         User::insert([
-            'username' => 'kasir',
+            'username' => 'hartono',
             'password' => Hash::make('12345'),
-            'is_active' => false,
+            'is_active' => true,
             'is_admin' => false,
-            'group_id' => 13,
+            'group_id' => 1,
         ]);
     }
 }

@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('password')->default('');
             $table->boolean('is_active')->default(false);
             $table->boolean('is_admin')->default(false);
-            $table->string('name')->default('');
+            $table->boolean('is_super_user')->default(false);
+            $table->string('fullname')->default('');
             $table->rememberToken();
             $table->timestamps();
             $table->foreign('group_id')->references('id')->on('user_groups');

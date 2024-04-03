@@ -17,10 +17,11 @@ class UserGroupSeeder extends Seeder
         UserGroup::truncate();
         Schema::enableForeignKeyConstraints();
 
-        UserGroup::insert(['id' => 1, 'name' => 'System Administrator']);
-        UserGroup::insert(['id' => 2, 'name' => 'Maintainer']);
-        UserGroup::insert(['id' => 11, 'name' => 'Owner']);
-        UserGroup::insert(['id' => 12, 'name' => 'Administrator']);
-        UserGroup::insert(['id' => 13, 'name' => 'Kasir']);
+        UserGroup::insert(['id' => 1, 'name' => 'Client']);
+        UserGroup::insert(['id' => 11, 'name' => 'System Administrator']);
+        UserGroup::insert(['id' => 12, 'name' => 'Maintainer']);
+        UserGroup::insert(['id' => 13, 'name' => 'Owner']);
+        UserGroup::insert(['id' => 14, 'name' => 'Administrator']);
+        UserGroup::insert(['id' => 15, 'name' => 'Kasir']);
     }
 }
