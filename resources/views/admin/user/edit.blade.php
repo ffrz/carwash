@@ -28,11 +28,11 @@
             </div>
           </div>
           <div class="form-group row">
-            <label for="name" class="col-sm-4 col-form-label">Nama Lengkap</label>
+            <label for="fullname" class="col-sm-4 col-form-label">Nama Lengkap</label>
             <div class="col-sm-8">
-              <input type="text" class="form-control @error('name') is-invalid @enderror" id="name"
-                placeholder="Nama Lengkap" name="name" value="{{ old('name', $user->name) }}">
-              @error('name')
+              <input type="text" class="form-control @error('fullname') is-invalid @enderror" id="fullname"
+                placeholder="Nama Lengkap" name="fullname" value="{{ old('fullname', $user->fullname) }}">
+              @error('fullname')
                 <span class="text-danger">{{ $message }}</span>
               @enderror
             </div>

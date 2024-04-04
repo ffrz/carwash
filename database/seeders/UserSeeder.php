@@ -23,6 +23,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('12345'),
             'is_active' => true,
             'is_admin' => true,
+            'fullname' => 'Administrator',
             //'is_super_user' => true,
             //'group_id' => 11,
         ]);
@@ -31,6 +32,7 @@ class UserSeeder extends Seeder
             'password' => Hash::make('12345'),
             'is_active' => true,
             'is_admin' => false,
+            'fullname' => 'Kasir',
             //'group_id' => 1,
         ]);
     }

@@ -58,11 +58,11 @@ Route::middleware([Authenticate::class, OnlyAdmin::class])->prefix('admin')->gro
         Route::post('save', 'save');
     });
 
-    Route::controller(UserGroupController::class)->prefix('user-groups')->group(function () {
-        Route::get('', 'index');
-        Route::match(['get', 'post'], 'edit/{id}', 'edit');
-        Route::get('delete/{id}', 'delete');
-    });
+    // Route::controller(UserGroupController::class)->prefix('user-groups')->group(function () {
+    //     Route::get('', 'index');
+    //     Route::match(['get', 'post'], 'edit/{id}', 'edit');
+    //     Route::get('delete/{id}', 'delete');
+    // });
 
     Route::controller(UserController::class)->prefix('users')->group(function () {
         Route::get('', 'index');
@@ -71,54 +71,54 @@ Route::middleware([Authenticate::class, OnlyAdmin::class])->prefix('admin')->gro
         Route::match(['get', 'post'], 'profile', 'profile');
     });
 
-    Route::controller(CostCategoryController::class)->prefix('cost-categories')->group(function () {
-        Route::get('', 'index');
-        Route::match(['get', 'post'], 'edit/{id}', 'edit');
-        Route::get('delete/{id}', 'delete');
-    });
+    // Route::controller(CostCategoryController::class)->prefix('cost-categories')->group(function () {
+    //     Route::get('', 'index');
+    //     Route::match(['get', 'post'], 'edit/{id}', 'edit');
+    //     Route::get('delete/{id}', 'delete');
+    // });
 
-    Route::controller(CostController::class)->prefix('costs')->group(function () {
-        Route::get('', 'index');
-        Route::match(['get', 'post'], 'edit/{id}', 'edit');
-        Route::get('delete/{id}', 'delete');
-    });
+    // Route::controller(CostController::class)->prefix('costs')->group(function () {
+    //     Route::get('', 'index');
+    //     Route::match(['get', 'post'], 'edit/{id}', 'edit');
+    //     Route::get('delete/{id}', 'delete');
+    // });
 
-    Route::controller(CashAccountController::class)->prefix('cash-accounts')->group(function () {
-        Route::get('', 'index');
-        Route::match(['get', 'post'], 'edit/{id}', 'edit');
-        Route::get('delete/{id}', 'delete');
-    });
+    // Route::controller(CashAccountController::class)->prefix('cash-accounts')->group(function () {
+    //     Route::get('', 'index');
+    //     Route::match(['get', 'post'], 'edit/{id}', 'edit');
+    //     Route::get('delete/{id}', 'delete');
+    // });
 
-    Route::controller(CashTransactionCategoryController::class)->prefix('cash-transaction-categories')->group(function () {
-        Route::get('', 'index');
-        Route::match(['get', 'post'], 'edit/{id}', 'edit');
-        Route::get('delete/{id}', 'delete');
-    });
+    // Route::controller(CashTransactionCategoryController::class)->prefix('cash-transaction-categories')->group(function () {
+    //     Route::get('', 'index');
+    //     Route::match(['get', 'post'], 'edit/{id}', 'edit');
+    //     Route::get('delete/{id}', 'delete');
+    // });
 
-    Route::controller(CashTransactionController::class)->prefix('cash-transactions')->group(function () {
-        Route::get('', 'index');
-        Route::match(['get', 'post'], 'edit/{id}', 'edit');
-        Route::get('delete/{id}', 'delete');
-    });
+    // Route::controller(CashTransactionController::class)->prefix('cash-transactions')->group(function () {
+    //     Route::get('', 'index');
+    //     Route::match(['get', 'post'], 'edit/{id}', 'edit');
+    //     Route::get('delete/{id}', 'delete');
+    // });
 
-    Route::controller(ProductCategoryController::class)->prefix('product-categories')->group(function () {
-        Route::get('', 'index');
-        Route::match(['get', 'post'], 'edit/{id}', 'edit');
-        Route::get('delete/{id}', 'delete');
-    });
+    // Route::controller(ProductCategoryController::class)->prefix('product-categories')->group(function () {
+    //     Route::get('', 'index');
+    //     Route::match(['get', 'post'], 'edit/{id}', 'edit');
+    //     Route::get('delete/{id}', 'delete');
+    // });
 
-    Route::controller(ProductController::class)->prefix('products')->group(function () {
-        Route::get('', 'index');
-        Route::match(['get', 'post'], 'edit/{id}', 'edit');
-        Route::get('delete/{id}', 'delete');
-    });
+    // Route::controller(ProductController::class)->prefix('products')->group(function () {
+    //     Route::get('', 'index');
+    //     Route::match(['get', 'post'], 'edit/{id}', 'edit');
+    //     Route::get('delete/{id}', 'delete');
+    // });
 
-    Route::controller(SupplierController::class)->prefix('suppliers')->group(function () {
-        Route::get('', 'index');
-        Route::match(['get', 'post'], 'edit/{id}', 'edit');
-        Route::get('delete/{id}', 'delete');
-        Route::get('view/{id}', 'view');
-    });
+    // Route::controller(SupplierController::class)->prefix('suppliers')->group(function () {
+    //     Route::get('', 'index');
+    //     Route::match(['get', 'post'], 'edit/{id}', 'edit');
+    //     Route::get('delete/{id}', 'delete');
+    //     Route::get('view/{id}', 'view');
+    // });
 
     Route::controller(CustomerController::class)->prefix('customers')->group(function () {
         Route::get('', 'index');

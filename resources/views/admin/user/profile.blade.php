@@ -16,10 +16,10 @@
               value="{{ $user->username }}">
           </div>
           <div class="form-group col-md-4">
-            <label for="name">Nama Lengkap</label>
-            <input type="text" class="form-control @error('name') 'is-invalid' @enderror" autofocus id="name"
-              placeholder="Nama Lengkap" name="name" value="{{ old('name', $user->name) }}">
-            @error('name')
+            <label for="fullname">Nama Lengkap</label>
+            <input type="text" class="form-control @error('fullname') 'is-invalid' @enderror" autofocus id="fullname"
+              placeholder="Nama Lengkap" name="fullname" value="{{ old('fullname', $user->fullname) }}">
+            @error('fullname')
               <span class="text-danger">{{ $message }}</span>
             @enderror
           </div>

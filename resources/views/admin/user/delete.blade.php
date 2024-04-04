@@ -21,22 +21,22 @@
           <tr>
             <td>Nama Lengkap</td>
             <td>:</td>
-            <td>{{ $user->name }}</td>
+            <td>{{ empty($user->fullname) ? '-' : $user->fullname }}</td>
           </tr>
-          <tr>
+          {{-- <tr>
             <td>Grup</td>
             <td>:</td>
             <td>{{ $user->group->name }}</td>
+          </tr> --}}
+          <tr>
+            <td>Status Akun</td>
+            <td>:</td>
+            <td>{{ $user->is_active ? 'Aktif' : 'Tidak Aktif' }}</td>
           </tr>
           <tr>
-            <td>Aktif</td>
+            <td>Jenis Akun</td>
             <td>:</td>
-            <td>{{ $user->is_active ? 'Ya' : 'Tidak' }}</td>
-          </tr>
-          <tr>
-            <td>Administrator</td>
-            <td>:</td>
-            <td>{{ $user->is_admin ? 'Ya' : 'Tidak' }}</td>
+            <td>{{ $user->is_admin ? 'Administrator' : 'Pengguna Biasa' }}</td>
           </tr>
         </table>
       </div>

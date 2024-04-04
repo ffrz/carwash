@@ -16,8 +16,8 @@ class UserController extends Controller
     private const INDEX_URL = '/admin/users';
 
     private $validation_messages = [
-        'name.required' => 'Nama harus diisi.',
-        'name.max' => 'Nama terlalu panjang, maksimal 100 karakter.',
+        'fullname.required' => 'Nama harus diisi.',
+        'fullname.max' => 'Nama terlalu panjang, maksimal 100 karakter.',
         'username.required' => 'ID Pengguna harus diisi.',
         'username.unique' => 'ID Pengguna harus unik.',
         'username.min' => 'ID Pengguna terlalu pendek, minial 5 karakter.',
@@ -44,7 +44,7 @@ class UserController extends Controller
             return redirect(self::INDEX_URL)->with('warning', 'Akun administrator <b>' . $user->username . '</b> ini tidak dapat diubah.');
 
         if ($request->method() == 'POST') {
-            $rules = ['name' => self::VALIDATION_RULE_NAME];
+            $rules = ['fullname' => self::VALIDATION_RULE_NAME];
 
             if (!$id)
                 $rules['username'] = 'required|unique:users,username,' . $id . '|min:3|max:40';
@@ -88,11 +88,11 @@ class UserController extends Controller
 
         if ($request->method() == 'POST') {
             $rules = [
-                'name' => self::VALIDATION_RULE_NAME,
+                'fullname' => self::VALIDATION_RULE_NAME,
             ];
 
             if (!empty($request->password)) {
-                $rules['password'] = self::VALIDATION_RULE_PASSWORD . 'confirmed';
+                $rules['password'] = self::VALIDATION_RULE_PASSWORD . '|confirmed';
                 $rules['password_confirmation'] = 'required';
             }
 
@@ -101,7 +101,7 @@ class UserController extends Controller
             if ($validator->fails())
                 return redirect()->back()->withInput()->withErrors($validator);
 
-            $user->update($request->only(['name', 'password']));
+            $user->update($request->only(['fullname', 'password']));
 
             return redirect('/admin/users/profile')->with('info', 'Profil anda telah diperbarui.');
         }
@@ -111,10 +111,10 @@ class UserController extends Controller
 
     public function delete(Request $request, $id)
     {
-        $user = User::with('group')->findOrFail($id);
+        $user = User::findOrFail($id);
 
         if ($user->username == 'admin')
-            return redirect(self::INDEX_URL)->with('error', 'Akun <b>' . $user->username . '</b> tidak dapat dihapus.');
+            return redirect(self::INDEX_URL)->with('error', 'Akun ' . $user->username . ' tidak dapat dihapus.');
         else if ($user->id == Auth::user()->id)
             return redirect(self::INDEX_URL)->with('error', 'Anda tidak dapat menghapus akun sendiri.');
 

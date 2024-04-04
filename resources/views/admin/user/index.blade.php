@@ -35,7 +35,7 @@
                   <span class="badge badge-warning">Administrator</span>
                   @endif
                 </td>
-                <td>{{ $item->name }}</td>
+                <td>{{ $item->fullname }}</td>
                 <td>{{ $item->is_active ? 'Aktif' : 'Nonaktif' }}</td>
                 <td class="text-center">
                   <div class="btn-group">
