@@ -22,7 +22,7 @@
             <thead>
               <tr>
                 <th>Nama</th>
-                <th>Kontak</th>
+                <th>No. HP</th>
                 <th>Alamat</th>
                 <th>Aksi</th>
               </tr>
@@ -31,7 +31,7 @@
               <?php foreach ($items as $item) : ?>
               <tr>
                 <td><?= e($item->name) ?></td>
-                <td><?= e($item->contact) ?></td>
+                <td><?= e($item->phone) ?></td>
                 <td><?= e($item->address) ?></td>
                 <td class="text-center">
                   <div class="btn-group">

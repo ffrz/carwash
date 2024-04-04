@@ -25,29 +25,15 @@ $title = ($item->id ? 'Edit' : 'Tambah') . ' Pelanggan';
             @enderror
           </div>
           <div class="form-group col-md-6">
-            <label for="contact">Kontak</label>
-            <input type="text" class="form-control" id="contact" placeholder="Kontak" name="contact"
-              value="{{ old('contact', $item->contact) }}">
+            <label for="phone">No. HP</label>
+            <input type="text" class="form-control" id="phone" placeholder="No. HP" name="phone"
+              value="{{ old('phone', $item->phone) }}">
           </div>
-          {{-- <div class="form-group col-md-4">
-            <label for="url">URL</label>
-            <input type="text" class="form-control" id="url" placeholder="URL" name="url"
-              value="{{ old('url', $item->url) }}">
-          </div> --}}
         </div>
         <div class="form-row">
           <div class="form-group col-md-12">
             <label for="address">Alamat</label>
             <textarea class="form-control" id="address" placeholder="Alamat" name="address">{{ old('address', $item->address) }}</textarea>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group col-md-12">
-            <div class="custom-control custom-checkbox">
-              <input type="checkbox" class="custom-control-input" id="active" name="active" value="1"
-                {{ $item->active ? 'checked="checked"' : '' }}>
-              <label class="custom-control-label" for="active">Aktif</label>
-            </div>
           </div>
         </div>
         <div class="form-row">
