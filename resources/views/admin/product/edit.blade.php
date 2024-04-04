@@ -54,6 +54,18 @@
               step="" value="{{ old('price', $item->price) }}">
           </div>
         </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="stock">Stok</label>
+            <input type="number" class="form-control" id="stock" placeholder="Stok" name="stock"
+              step="" value="{{ old('stock', $item->stock) }}">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="uom">Satuan</label>
+            <input type="text" class="form-control" id="uom" placeholder="Satuan" name="uom"
+              step="" value="{{ old('uom', $item->uom) }}">
+          </div>
+        </div>
         <div class="form-group row">
           <div class="col-sm-12">
             <div class="custom-control custom-checkbox">

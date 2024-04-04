@@ -21,5 +21,7 @@ class Product extends Model
         'price',
         'active',
         'notes',
+        'stock',
+        'uom',
     ];
 }

@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name')->unique();
             $table->decimal('cost')->default(0);
             $table->decimal('price')->default(0);
+            $table->decimal('stock')->default(0);
+            $table->string('uom')->default('');
             $table->boolean('active')->default(false);
             $table->text('notes')->default('');
             $table->timestamps();

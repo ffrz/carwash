@@ -23,7 +23,11 @@
               <tr>
                 <th class="text-left">Nama Produk / Layanan</th>
                 <th>Jenis</th>
-                <th>Harga Beli</th>
+                <th>Stok</th>
+                <th>Satuan</th>
+                @if (Auth::user()->is_admin)
+                  <th>Harga Beli</th>
+                @endif
                 <th>Harga Jual</th>
                 <th>Aksi</th>
               </tr>
@@ -38,7 +42,11 @@
                     @endif
                   </td>
                   <td class="text-center">{{ format_product_type($item->type) }}</td>
-                  <td class="text-right">{{ format_number($item->cost) }}</td>
+                  <td class="text-right">{{ format_number($item->stock) }}</td>
+                  <td class="text-center">{{ $item->uom }}</td>
+                  @if (Auth::user()->is_admin)
+                    <td class="text-right">{{ format_number($item->cost) }}</td>
+                  @endif
                   <td class="text-right">{{ format_number($item->price) }}</td>
                   <td class="text-center">
                     <div class="btn-group">
@@ -57,8 +65,12 @@
             <thead>
               <tr>
                 <th class="text-left">Nama Produk / Layanan</th>
+                <th>Stok</th>
+                <th>Satuan</th>
                 <th>Jenis</th>
-                <th>Harga Beli</th>
+                @if (Auth::user()->is_admin)
+                  <th>Harga Beli</th>
+                @endif
                 <th>Harga Jual</th>
                 <th>Aksi</th>
               </tr>
@@ -77,7 +89,7 @@
       ];
       DATATABLES_OPTIONS.columnDefs = [{
           orderable: false,
-          targets: 4
+          targets: {{ Auth::user()->is_admin ? '4' : '3' }}
         },
         // {
         //   targets: 2,
