@@ -103,6 +103,24 @@ if (!isset($menu_active)) {
             </li>
           </ul>
         </li>
+        <li class="nav-item {{ $menu_active == 'inventory' ? 'menu-open' : '' }}">
+          <a href="#" class="nav-link {{ $menu_active == 'inventory' ? 'active' : '' }}">
+            <i class="nav-icon fas fa-warehouse"></i>
+            <p>
+              Inventori
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{ url('/admin/products/') }}"
+                class="nav-link {{ $nav_active == 'product' ? 'active' : '' }}">
+                <i class="nav-icon fas fa-cubes"></i>
+                <p>Produk & Jasa</p>
+              </a>
+            </li>
+          </ul>
+        </li>
         {{-- 
         <li class="nav-item {{ $menu_active == 'inventory' ? 'menu-open' : '' }}">
           <a href="#" class="nav-link {{ $menu_active == 'inventory' ? 'active' : '' }}">

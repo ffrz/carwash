@@ -107,11 +107,11 @@ Route::middleware([Authenticate::class, OnlyAdmin::class])->prefix('admin')->gro
     //     Route::get('delete/{id}', 'delete');
     // });
 
-    // Route::controller(ProductController::class)->prefix('products')->group(function () {
-    //     Route::get('', 'index');
-    //     Route::match(['get', 'post'], 'edit/{id}', 'edit');
-    //     Route::get('delete/{id}', 'delete');
-    // });
+    Route::controller(ProductController::class)->prefix('products')->group(function () {
+        Route::get('', 'index');
+        Route::match(['get', 'post'], 'edit/{id}', 'edit');
+        Route::get('delete/{id}', 'delete');
+    });
 
     // Route::controller(SupplierController::class)->prefix('suppliers')->group(function () {
     //     Route::get('', 'index');

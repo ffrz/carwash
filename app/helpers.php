@@ -179,11 +179,13 @@ function format_date($date, $format = 'dd-MM-yyyy', $locale = null) {
 //     }
 // }
 
+use App\Models\Product;
 function format_product_type($type) {
     switch ($type) {
-        case 0: return 'Non Stok';
-        case 1: return 'Stok';
-        case 2: return 'Jasa';
+        case Product::TYPE_NON_STOCKED: return 'Non Stok';
+        case Product::TYPE_STOCKED: return 'Stok';
+        case Product::TYPE_SERVICE: return 'Jasa';
+        case Product::TYPE_COMPOSITE: return 'Komposisi';
     }
 }
 
