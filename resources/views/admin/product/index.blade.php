@@ -23,6 +23,7 @@
               <tr>
                 <th class="text-left">Nama Produk / Layanan</th>
                 <th>Jenis</th>
+                <th>Kategori</th>
                 <th>Stok</th>
                 <th>Satuan</th>
                 @if (Auth::user()->is_admin)
@@ -42,6 +43,7 @@
                     @endif
                   </td>
                   <td class="text-center">{{ format_product_type($item->type) }}</td>
+                  <td>{{ $item->category ? $item->category->name : '' }}</td>
                   <td class="text-right">{{ format_number($item->stock) }}</td>
                   <td class="text-center">{{ $item->uom }}</td>
                   @if (Auth::user()->is_admin)
@@ -65,9 +67,10 @@
             <thead>
               <tr>
                 <th class="text-left">Nama Produk / Layanan</th>
+                <th>Jenis</th>
+                <th>Kategori</th>
                 <th>Stok</th>
                 <th>Satuan</th>
-                <th>Jenis</th>
                 @if (Auth::user()->is_admin)
                   <th>Harga Beli</th>
                 @endif
@@ -89,7 +92,7 @@
       ];
       DATATABLES_OPTIONS.columnDefs = [{
           orderable: false,
-          targets: {{ Auth::user()->is_admin ? '4' : '3' }}
+          targets: {{ Auth::user()->is_admin ? '5' : '4' }}
         },
         // {
         //   targets: 2,

@@ -16,7 +16,7 @@
       <div class="card-body">
         <div class="form-row">
           <div class="form-group col-md-4">
-            <label for="type" class="">Jenis Produk / Layanan</label>
+            <label for="type" class="">Jenis Produk</label>
             <select class="form-control custom-select" id="type" name="type">
               {{-- <option value="{{ Product::TYPE_NON_STOCKED }}"
                 {{ $item->type == Product::TYPE_NON_STOCKED ? 'selected' : '' }}>
@@ -34,10 +34,29 @@
             </select>
           </div>
           <div class="form-group col-md-8">
-            <label for="name">Nama Produk / Layanan</label>
+            <label for="name">Nama Produk</label>
             <input type="text" class="form-control @error('name') is-invalide @enderror" id="name"
               placeholder="Nama" name="name" value="{{ old('name', $item->name) }}">
             @error('name')
+              <span class="text-danger">{{ $message }}</span>
+            @enderror
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label for="type" class="">Kategori</label>
+            <select class="form-control custom-select" id="category_id" name="category_id">
+              <option value="" {{ $item->category_id == null ? 'selected' : '' }}>
+                - Tanpa Kategori -
+              </option>
+              @foreach ($categories as $category)
+                <option value="{{ $category->id }}"
+                  {{ $item->category_id == $category->id ? 'selected' : '' }}>
+                  {{ $category->name }}
+                </option>
+              @endforeach
+            </select>
+            @error('category_id')
               <span class="text-danger">{{ $message }}</span>
             @enderror
           </div>
@@ -57,13 +76,13 @@
         <div class="form-row">
           <div class="form-group col-md-4">
             <label for="stock">Stok</label>
-            <input type="number" class="form-control" id="stock" placeholder="Stok" name="stock"
-              step="" value="{{ old('stock', $item->stock) }}">
+            <input type="number" class="form-control" id="stock" placeholder="Stok" name="stock" step=""
+              value="{{ old('stock', $item->stock) }}">
           </div>
           <div class="form-group col-md-4">
             <label for="uom">Satuan</label>
-            <input type="text" class="form-control" id="uom" placeholder="Satuan" name="uom"
-              step="" value="{{ old('uom', $item->uom) }}">
+            <input type="text" class="form-control" id="uom" placeholder="Satuan" name="uom" step=""
+              value="{{ old('uom', $item->uom) }}">
           </div>
         </div>
         <div class="form-group row">

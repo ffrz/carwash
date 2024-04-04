@@ -22,7 +22,10 @@ return new class extends Migration
             $table->string('uom')->default('');
             $table->boolean('active')->default(false);
             $table->text('notes')->default('');
+            $table->unsignedBigInteger('category_id')->nullable()->default(null);
             $table->timestamps();
+
+            $table->foreign('category_id')->references('id')->on('product_categories');
         });
     }
 

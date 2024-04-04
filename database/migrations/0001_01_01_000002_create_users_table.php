@@ -13,7 +13,6 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            //table->unsignedBigInteger('group_id');
             $table->string('username')->unique();
             $table->string('password')->default('');
             $table->boolean('is_active')->default(false);
@@ -22,6 +21,7 @@ return new class extends Migration
             $table->string('fullname')->default('');
             $table->rememberToken();
             $table->timestamps();
+            //table->unsignedBigInteger('group_id');
             //$table->foreign('group_id')->references('id')->on('user_groups');
         });
     }

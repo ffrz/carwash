@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\ProductCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -13,7 +14,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $items = Product::orderBy('name', 'asc')->get();
+        $items = Product::with('category')->orderBy('name', 'asc')->get();
         return view('admin.product.index', compact('items'));
     }
 
@@ -36,6 +37,9 @@ class ProductController extends Controller
             if (!isset($data['active']))
                 $data['active'] = false;
 
+            if (empty($data['category_id']))
+                $data['category_id'] = null;
+
             $validator = Validator::make($data, [
                 'name' => 'required',
                 'price' => 'required|min:0',
@@ -54,7 +58,9 @@ class ProductController extends Controller
             return redirect($this->index_url)->with('info', 'Berhasil disimpan.');
         }
 
-        return view('admin.product.edit', compact('item'));
+        $categories = ProductCategory::orderBy('name', 'asc')->get();
+
+        return view('admin.product.edit', compact('item', 'categories'));
     }
 
     public function delete($id)

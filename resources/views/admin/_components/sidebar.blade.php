@@ -112,26 +112,7 @@ if (!isset($menu_active)) {
             </p>
           </a>
           <ul class="nav nav-treeview">
-            <li class="nav-item">
-              <a href="{{ url('/admin/products/') }}"
-                class="nav-link {{ $nav_active == 'product' ? 'active' : '' }}">
-                <i class="nav-icon fas fa-cubes"></i>
-                <p>Produk & Jasa</p>
-              </a>
-            </li>
-          </ul>
-        </li>
-        {{-- 
-        <li class="nav-item {{ $menu_active == 'inventory' ? 'menu-open' : '' }}">
-          <a href="#" class="nav-link {{ $menu_active == 'inventory' ? 'active' : '' }}">
-            <i class="nav-icon fas fa-warehouse"></i>
-            <p>
-              Inventori
-              <i class="right fas fa-angle-left"></i>
-            </p>
-          </a>
-          <ul class="nav nav-treeview">
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a href="{{ url('/admin/stock-adjustments/') }}"
                 class="nav-link {{ $nav_active == 'stock-adjustment' ? 'active' : '' }}">
                 <i class="nav-icon fas fa-sliders"></i>
@@ -144,7 +125,7 @@ if (!isset($menu_active)) {
                 <i class="nav-icon fas fa-clock-rotate-left"></i>
                 <p>Riwayat Stok</p>
               </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
               <a href="{{ url('/admin/products/') }}" class="nav-link {{ $nav_active == 'product' ? 'active' : '' }}">
                 <i class="nav-icon fas fa-cubes"></i>
@@ -160,6 +141,8 @@ if (!isset($menu_active)) {
             </li>
           </ul>
         </li>
+        {{-- 
+        
         <li class="nav-item {{ $menu_active == 'purchasing' ? 'menu-open' : '' }}">
           <a href="#" class="nav-link {{ $menu_active == 'purchasing' ? 'active' : '' }}">
             <i class="nav-icon fas fa-truck-fast"></i>

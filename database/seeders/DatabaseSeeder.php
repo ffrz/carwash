@@ -22,6 +22,8 @@ class DatabaseSeeder extends Seeder
             CashTransactionSeeder::class,
             CostCategorySeeder::class,
             CostSeeder::class,
+            ProductCategorySeeder::class,
+            ProductSeeder::class,
         ]);
     }
 }
