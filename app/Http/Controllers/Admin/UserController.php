@@ -30,7 +30,7 @@ class UserController extends Controller
 
     public function index()
     {
-        $items = User::with('group')->get();
+        $items = User::all();
         return view('admin.user.index', compact('items'));
     }
 
@@ -40,7 +40,7 @@ class UserController extends Controller
 
         if (!$user)
             return redirect(self::INDEX_URL)->with('warning', 'Pengguna tidak ditemukan.');
-        else if ($user->username == 'superadmin')
+        else if ($user->username == 'admin')
             return redirect(self::INDEX_URL)->with('warning', 'Akun administrator <b>' . $user->username . '</b> ini tidak dapat diubah.');
 
         if ($request->method() == 'POST') {
@@ -113,7 +113,7 @@ class UserController extends Controller
     {
         $user = User::with('group')->findOrFail($id);
 
-        if ($user->username == 'superadmin')
+        if ($user->username == 'admin')
             return redirect(self::INDEX_URL)->with('error', 'Akun <b>' . $user->username . '</b> tidak dapat dihapus.');
         else if ($user->id == Auth::user()->id)
             return redirect(self::INDEX_URL)->with('error', 'Anda tidak dapat menghapus akun sendiri.');

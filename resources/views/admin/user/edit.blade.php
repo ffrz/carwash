@@ -37,20 +37,20 @@
               @enderror
             </div>
           </div>
-          <div class="form-group row">
+          {{-- <div class="form-group row">
             <label for="group_id" class="col-sm-4 col-form-label">Grup Pengguna</label>
             <div class="col-sm-8">
               <select class="custom-select select2" id="group_id" name="group_id">
                 <option value="" {{ !$user->group_id ? 'selected' : '' }}>-- Pilih Grup Pengguna --</option>
-                <?php foreach ($groups as $group) : ?>
+                @foreach ($groups as $group)
                 <option value="{{ $group->id }}" {{ old('group_id', $user->group_id) == $group->id ? 'selected' : '' }}
                   title="{{ $group->description }}">
                   {{ $group->name }}
                 </option>
-                <?php endforeach ?>
+                @endforeach
               </select>
             </div>
-          </div>
+          </div> --}}
           <div class="form-group row">
             <label for="password" class="col-sm-4 col-form-label">Kata Sandi</label>
             <div class="col-sm-8">

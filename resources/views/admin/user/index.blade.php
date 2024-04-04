@@ -23,7 +23,6 @@
                 <th>ID Pengguna</th>
                 <th>Nama Lengkap</th>
                 <th>Status</th>
-                <th>Grup</th>
                 <th class="text-center" style="max-width:10%">Aksi</th>
               </tr>
             </thead>
@@ -38,7 +37,6 @@
                 </td>
                 <td>{{ $item->name }}</td>
                 <td>{{ $item->is_active ? 'Aktif' : 'Nonaktif' }}</td>
-                <td>{{ $item->group->name }}</td>
                 <td class="text-center">
                   <div class="btn-group">
                     <a href="{{ url("/admin/users/edit/$item->id") }}" class="btn btn-default btn-sm"><i
@@ -65,7 +63,7 @@
       ];
       DATATABLES_OPTIONS.columnDefs = [{
         orderable: false,
-        targets: 4
+        targets: 3
       }];
       $('.data-table').DataTable(DATATABLES_OPTIONS);
     });

@@ -23,15 +23,15 @@ class UserSeeder extends Seeder
             'password' => Hash::make('12345'),
             'is_active' => true,
             'is_admin' => true,
-            'is_super_user' => true,
-            'group_id' => 11,
+            //'is_super_user' => true,
+            //'group_id' => 11,
         ]);
         User::insert([
-            'username' => 'hartono',
+            'username' => 'kasir',
             'password' => Hash::make('12345'),
             'is_active' => true,
             'is_admin' => false,
-            'group_id' => 1,
+            //'group_id' => 1,
         ]);
     }
 }

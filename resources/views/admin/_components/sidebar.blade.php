@@ -237,17 +237,17 @@ if (!isset($menu_active)) {
           <ul class="nav nav-treeview">
             <li class="nav-item">
               <a href="{{ url('/admin/users') }}" class="nav-link {{ $nav_active == 'users' ? 'active' : '' }}">
-                <i class="nav-icon fas fa-user"></i>
+                <i class="nav-icon fas fa-users"></i>
                 <p>Pengguna</p>
               </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a href="{{ url('/admin/user-groups') }}"
                 class="nav-link {{ $nav_active == 'user-groups' ? 'active' : '' }}">
                 <i class="nav-icon fas fa-users"></i>
                 <p>Grup Pengguna</p>
               </a>
-            </li>
+            </li> --}}
             <li class="nav-item">
               <a href="{{ url('/admin/settings') }}" class="nav-link {{ $nav_active == 'settings' ? 'active' : '' }}">
                 <i class="nav-icon fas fa-gear"></i>

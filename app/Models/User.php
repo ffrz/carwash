@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'group_id',
+        // 'group_id',
         'username',
         'password',
         'is_active',
@@ -42,8 +42,8 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function group()
-    {
-        return $this->belongsTo(UserGroup::class);
-    }
+    // public function group()
+    // {
+    //     return $this->belongsTo(UserGroup::class);
+    // }
 }

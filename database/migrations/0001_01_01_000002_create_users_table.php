@@ -13,16 +13,16 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('group_id');
+            //table->unsignedBigInteger('group_id');
             $table->string('username')->unique();
             $table->string('password')->default('');
             $table->boolean('is_active')->default(false);
             $table->boolean('is_admin')->default(false);
-            $table->boolean('is_super_user')->default(false);
+            //$table->boolean('is_super_user')->default(false);
             $table->string('fullname')->default('');
             $table->rememberToken();
             $table->timestamps();
-            $table->foreign('group_id')->references('id')->on('user_groups');
+            //$table->foreign('group_id')->references('id')->on('user_groups');
         });
     }
 
